@@ -1,24 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LatihanDownloadTaskManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W1z-NK-Hx4">
+                                <rect key="frame" x="32" y="403.66666666666669" width="329" height="4"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMW-pO-TPX">
+                                <rect key="frame" x="20" y="415.66666666666669" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVI-Fe-dqN">
+                                <rect key="frame" x="146.66666666666666" y="444.66666666666669" width="100" height="34.333333333333314"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Download"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Download">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uom-mj-CtK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-de-OBn">
+                                <rect key="frame" x="166.66666666666666" y="487" width="60" height="35"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Stop"/>
+                                <connections>
+                                    <action selector="buttonStopView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KGd-Aa-viZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SPS-de-OBn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0jh-2k-pJh"/>
+                            <constraint firstItem="wMW-pO-TPX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cgd-FM-wfK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wMW-pO-TPX" secondAttribute="trailing" constant="20" id="Dbf-f7-NcM"/>
+                            <constraint firstItem="W1z-NK-Hx4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dxh-mj-Vcp"/>
+                            <constraint firstItem="SPS-de-OBn" firstAttribute="top" secondItem="WVI-Fe-dqN" secondAttribute="bottom" constant="8" id="FB3-ZK-t7D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W1z-NK-Hx4" secondAttribute="trailing" constant="32" id="NNr-93-heF"/>
+                            <constraint firstItem="wMW-pO-TPX" firstAttribute="top" secondItem="W1z-NK-Hx4" secondAttribute="bottom" constant="8" id="NSX-Ma-bMt"/>
+                            <constraint firstItem="wMW-pO-TPX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="W7P-jG-zQo"/>
+                            <constraint firstItem="WVI-Fe-dqN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wz6-WQ-Fhi"/>
+                            <constraint firstItem="wMW-pO-TPX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mXk-NP-3gM"/>
+                            <constraint firstItem="W1z-NK-Hx4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="qrG-du-epo"/>
+                            <constraint firstItem="WVI-Fe-dqN" firstAttribute="top" secondItem="wMW-pO-TPX" secondAttribute="bottom" constant="8" id="rrW-Cb-LcI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonStopView" destination="SPS-de-OBn" id="APb-9h-Y6a"/>
+                        <outlet property="buttonView" destination="WVI-Fe-dqN" id="Gn6-Ny-3Vg"/>
+                        <outlet property="messageView" destination="wMW-pO-TPX" id="CQ6-DJ-xRV"/>
+                        <outlet property="progressView" destination="W1z-NK-Hx4" id="RKd-uE-LXB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="-2"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
